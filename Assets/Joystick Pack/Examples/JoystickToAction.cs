@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 
-public class JoystickSetterExample : MonoBehaviour
+public class JoystickToAction : MonoBehaviour
 {
     public FloatingJoystick verticalJoystick;
     public FloatingJoystick horizontalJoystick;

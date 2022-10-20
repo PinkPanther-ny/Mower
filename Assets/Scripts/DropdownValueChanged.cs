@@ -5,7 +5,7 @@ public class DropdownValueChanged : MonoBehaviour
 {
     Dropdown m_Dropdown;
     public GameObject client;
-    MowerTCPTestClient c;
+    MowerZMQClient c;
     void Start()
     {
         //Fetch the Dropdown GameObject
@@ -15,7 +15,7 @@ public class DropdownValueChanged : MonoBehaviour
             DropdownValueChange(m_Dropdown);
         });
 
-        c = client.GetComponent<MowerTCPTestClient>();
+        c = client.GetComponent<MowerZMQClient>();
     }
 
     void DropdownValueChange(Dropdown change)
