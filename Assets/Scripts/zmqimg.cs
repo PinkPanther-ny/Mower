@@ -3,8 +3,6 @@ using System;
 using NetMQ;
 using NetMQ.Sockets;
 using Debug = UnityEngine.Debug;
-using System.IO;
-using System.Drawing;
 
 public class zmqimg : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class zmqimg : MonoBehaviour
     {
         AsyncIO.ForceDotNet.Force();
         subSocket = new SubscriberSocket();
-        subSocket.Options.ReceiveHighWatermark = 1000;
+        subSocket.Options.ReceiveHighWatermark = 2;
         subSocket.Connect("tcp://10.42.0.1:8000");
         subSocket.Subscribe("");
     }
