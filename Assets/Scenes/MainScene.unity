@@ -3495,7 +3495,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart connection
+  m_Text: Restart control connection
 --- !u!222 &1463762087
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3609,18 +3609,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4512496684607749385, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512496684607749385, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512496684607749385, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512496684607749385, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3662,31 +3650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4512496684607749389, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
       propertyPath: m_Name
-      value: Plane
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512496684607749390, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
-      propertyPath: m_CookingOptions
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512496684607749391, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512496684607749391, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512496684607749391, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512496684607749391, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
-      propertyPath: m_LightProbeUsage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512496684607749391, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}
-      propertyPath: m_ReflectionProbeUsage
-      value: 0
+      value: Screen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68458cd74a9ca0b48ae6b949f08d5330, type: 3}

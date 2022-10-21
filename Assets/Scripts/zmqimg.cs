@@ -19,15 +19,18 @@ public class zmqimg : MonoBehaviour
 
     void Update()
     {
+        string messageReceived;
+        if (subSocket.TryReceiveFrameString(out messageReceived))
+        {
+            // Debug.Log(messageReceived.Length);
+            byte[] bytebuffer = Convert.FromBase64String(messageReceived);
 
-        string messageReceived = subSocket.ReceiveFrameString();
-        Debug.Log(messageReceived.Length);
-        byte[] bytebuffer = Convert.FromBase64String(messageReceived);
-
-        Texture2D tex = new Texture2D(1280, 480);
-        tex.LoadImage(bytebuffer);
-        tex.Apply();
-        GetComponent<Renderer>().material.mainTexture = tex;
+            Texture2D tex = new Texture2D(1280, 480);
+            tex.LoadImage(bytebuffer);
+            tex.Apply();
+            GetComponent<Renderer>().material.mainTexture = tex;
+        }
+        
 
     }
 }
