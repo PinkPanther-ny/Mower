@@ -12,6 +12,20 @@ public class SSHClient : MonoBehaviour
     private Thread _rebootDeviceThread;
     private Thread _restartServiceThread;
     #endregion
+    public void RestartServiceAndRecord()
+    {
+        try
+        {
+            Invoke("RestartConnection", 5);
+            _restartServiceThread = new Thread(new ThreadStart(_restartServiceAndRecord));
+            _restartServiceThread.IsBackground = true;
+            _restartServiceThread.Start();
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log("On RestartServiceAndRecord exception " + e);
+        }
+    }
     public void RestartService()
     {
         try
@@ -39,14 +53,33 @@ public class SSHClient : MonoBehaviour
             Debug.Log("On RebootDevice exception " + e);
         }
     }
+    
+    public void _restartServiceAndRecord()
+    {
+        using (var client = new SshClient("10.42.0.1", "root", "nvidia"))
+        {
+            client.Connect();
+            
+            using (var command = client.CreateCommand("systemctl stop mower_light@-.service"))
+            {
+                Debug.Log(command.Execute()); //Don't forget to Execute the command
+            }
+            using (var command = client.CreateCommand("systemctl start mower_light@--record.service "))
+            {
+                Debug.Log(command.Execute()); //Don't forget to Execute the command
+            }
 
+            client.Disconnect();
+        }
+    }
+    
     public void _restartService()
     {
         using (var client = new SshClient("10.42.0.1", "root", "nvidia"))
         {
             client.Connect();
 
-            using (var command = client.CreateCommand("systemctl restart mower"))
+            using (var command = client.CreateCommand("systemctl restart mower_light@-.service"))
             {
                 Debug.Log(command.Execute()); //Don't forget to Execute the command
             }

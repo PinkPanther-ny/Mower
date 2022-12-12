@@ -20,7 +20,10 @@ public class MowerZMQClient : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		SendAction(valueText.text);
+		if (!valueText.text.StartsWith("X"))
+		{
+			SendAction(valueText.text);
+		}
 	}
 
 	public void SendAction(String action)
